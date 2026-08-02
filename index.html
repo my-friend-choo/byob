@@ -36,7 +36,6 @@
 				<li><a href="#edition-info">Edition Info</a></li>
 				<li><a href="#print-and-play">Print &amp; Play / Mailing List</a></li>
 				<li><a href="#about-us">About Us</a></li>
-				<li><a class="popup-modal" href="#suggestion">Suggest a Prompt</a></li>
 				<li><a href="mailto:dobetter@dobettergames.com">Questions</a></li>
 			</ul>
 		</div>
@@ -257,12 +256,10 @@
 					<li><a href="https://www.youtube.com/channel/UCNcVynms6VLTsBW7b9zwBSg" target="_blank">YouTube</a></li>
 				</ul>
 			</div>
-			<div class="four columns">
-				<h4>Recent tweets</h4>
-				<a class="twitter-timeline" href="https://twitter.com/DoBetterGames" data-widget-id="592510930916773888"></a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				</div>
+			<div class="four columns spacer">
+
 			</div>
+		</div>
 		<div class="row ornament">
 			<br>
 			<img class="book fill" src="images/book.png">
@@ -274,51 +271,11 @@
 		</div>
 	</div>
 </div>
-<div id="suggestion" class="white-popup-block mfp-hide modal suggesting">
-	<div class="stage suggesting">
-		<div class="row">
-			<br>
-			<h4 class="fill">Make a Suggestion</h4>
-			<div class="decor">
-				<img class="right" src="images/decoration.png">
-				<hr>
-			</div>
-		</div>
-		<div class="row">
-			<label for="source">Your Prompt Suggestion</label>
-			<input class="u-full-width prompt" type="text" name="prompt" placeholder="A prompt, e.g. Dialogue in an action movie">
-			<p class="subtitle">We'd love to hear your suggestions for new prompts, but we can't guarantee that they'll be used, they won't be changed, or they haven't been submitted before. As such, we also can't compensate or credit. If you're cool with that, send us your best.</p>
-		</div>
-		<div class="row">
-			<button type="submit" class="bright submit">submit prompt</button>
-		</div>
-	</div>
-	<div class="stage success">
-		<div class="row">
-			<br>
-			<h4 class="fill">Sent</h4>
-			<div class="decor">
-				<img class="right" src="images/decoration.png">
-				<hr>
-			</div>
-		</div>
-		<div class="row">
-			<p>We'll let you know when it ships, sometime in October.</p>
-		</div>
-		<div class="row">
-			<div class="four columns">
-				<button class="u-full-width done">done</button>
-			</div>
-			<div class="eight columns">
-				<button class="bright u-full-width back">submit another</button>
-			</div>
-		</div>
-	</div>
-</div>
+
 
 <div class="section copy">
 	<div class="container">
-		<p>Copyright 2014-2015 &nbsp; <a href="#">Do Better Games, LLC</a></p>
+		<p>Copyright 2014-2026 &nbsp; <a href="#">Do Better Games, LLC</a></p>
 	</div>
 </div>
 <script>
@@ -348,37 +305,7 @@
 </script>
 <script type="text/javascript">if(window.parent==window){var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-58038891-1']);_gaq.push(['_setDomainName','bringyourownbook.com']);_gaq.push(['_setAllowLinker',true]);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();}</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-
-$("#suggestion .submit").on("click", function(e) {
-	var content = $("#suggestion input.prompt").val();
-	var button = $(this);
-	button.text("submitting...");
-	$.ajax({
-		type: "POST",
-		url: "https://byob-site.appspot.com/suggest",
-		data: {content: content},
-		success: function(response) {
-			$("#suggestion input.prompt").val("");
-			button.text("submit prompt");
-		},
-	});
-});
-
-</script>
-
 <script src="js/magnific.min.js"></script>
-<script>
-
-$(function () {
-	$('.popup-modal').magnificPopup({
-		type: 'inline',
-		preloader: false,
-		focus: '#username',
-	});
-});
-
-</script>
 
 </body>
 </html>
